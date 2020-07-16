@@ -1,10 +1,3 @@
-@keyframes roll {
-  0%   {transform: rotate(0deg);}
-  25%  {transform: rotate(30deg);}
-  50%  {transform: rotate(-30deg);}
-  100% {transform: rotate(0deg);}
-}
-
 .app {
   text-align: center;
   background-color: #282c34;
@@ -15,56 +8,87 @@
   justify-content: center;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-}
-
 .logo {
   position: absolute;
   top: 10px;
   width: 365px;
   transition: 0.1s linear;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: transparent;
+}
+
+.points {
+  color: white;
+  font-size: 24px;
+  margin: 15px;
+}
+
+.pokemon-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .pokemon {
   height: 35vmin;
   transition: 0.1s linear;
-  transform-origin: bottom;
   cursor: pointer;
+}
+
+.pokemon:active {
+  height: 37vmin;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.starter-text {
+  color: white;
+  font-size: 16px;
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.starter-pokemon-container {
+  display: flex;
+  align-items: center;
+}
+
+.starter-pokemon {
+  height: 25vmin;
+  margin: 15px;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+
+.starter-pokemon:hover {
+  height: 27vmin;
+}
+
+.no-drag {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.anim {
-  animation-name: roll;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  pointer-events: none;
-}
-
-.pokemon:hover {
-  height: 36.5vmin;
 }
 
 @media only screen and (max-width: 600px) {
   .logo {
     width: 265px;
   }
+
+  .starter-pokemon-container {
+    flex-direction: column;
+  }
   
   .pokemon {
     height: 55vmin;
+  }
+
+  .pokemon:active {
+    height: 57vmin;
   }
 }
